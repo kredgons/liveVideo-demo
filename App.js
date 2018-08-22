@@ -7,7 +7,7 @@ export default class App extends React.Component {
 
     state = {
     mute: false,
-    shouldPlay: true,
+    shouldPlay: false,
   }
 
   handlePlayAndPause = () => {
@@ -30,27 +30,61 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <View>
             <Text style={{ textAlign: 'center' }}> React Native Video </Text>
-            <Video
-              source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
-              shouldPlay={this.state.shouldPlay}
-              resizeMode="cover"
-              style={{ width, height: 300 }}
-              isMuted={this.state.mute}
-            />
-            <View style={styles.controlBar}>
-              <MaterialIcons
-                name={this.state.mute ? "volume-mute" : "volume-up"}
-                size={45}
-                color="white"
-                onPress={this.handleVolume}
+            <Text style={{ textAlign: 'left' }}> HOWS IT HANGING</Text>
+            <Text style={{ textAlign: 'right' }}> BOOIIII</Text>
+
+
+
+            <View>
+              <Video
+                source={{ uri: 'http://techslides.com/demos/sample-videos/small.mp4' }}
+                shouldPlay={this.state.shouldPlay}
+                resizeMode="cover"
+                style={{ width: 300, height: 100 }}
+                isMuted={this.state.mute}
               />
-              <MaterialIcons
-                name={this.state.shouldPlay ? "pause" : "play-arrow"}
-                size={45}
-                color="white"
-                onPress={this.handlePlayAndPause}
-              />
+              <View style={styles.controlBar}>
+                <MaterialIcons
+                  name={this.state.mute ? "volume-mute" : "volume-up"}
+                  size={45}
+                  color="white"
+                  onPress={this.handleVolume}
+                />
+                <MaterialIcons
+                  name={this.state.shouldPlay ? "pause" : "play-arrow"}
+                  size={45}
+                  color="white"
+                  onPress={this.handlePlayAndPause}
+                />
+              </View>
             </View>
+
+            <View>
+              <Video
+                source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
+                shouldPlay={this.state.shouldPlay}
+                resizeMode="cover"
+                style={{ width: 300, height: 100  }}
+                isMuted={this.state.mute}
+              />
+              <View style={styles.controlBar}>
+                <MaterialIcons
+                  name={this.state.mute ? "volume-mute" : "volume-up"}
+                  size={45}
+                  color="white"
+                  onPress={this.handleVolume}
+                />
+                <MaterialIcons
+                  name={this.state.shouldPlay ? "pause" : "play-arrow"}
+                  size={45}
+                  color="white"
+                  onPress={this.handlePlayAndPause}
+                />
+              </View>
+
+            </View>
+
+
           </View>
       </View>
     );
